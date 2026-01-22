@@ -3,8 +3,8 @@ pragma solidity ^0.8.0;
 import './interfaces/IWETH.sol';
 import '@openzeppelin/contracts/access/Ownable.sol';
 import '@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol';
-import './integrations/interfaces/ISeloraV3Router.sol';
-import './integrations/interfaces/ISeloraV3Factory.sol';
+import './integrations/interfaces/IMagnetarV3Router.sol';
+import './integrations/interfaces/IMagnetarV3Factory.sol';
 
 contract V3SwapExecutor is Ownable {
     using SafeERC20 for IERC20;
@@ -22,8 +22,8 @@ contract V3SwapExecutor is Ownable {
         int24 tickSpacing;
     }
 
-    ISeloraV3Router public immutable baseRouter;
-    ISeloraV3Factory public immutable baseFactory;
+    IMagnetarV3Router public immutable baseRouter;
+    IMagnetarV3Factory public immutable baseFactory;
     uint64 public swapFeePercentage;
     IWETH public weth;
 
@@ -39,8 +39,8 @@ contract V3SwapExecutor is Ownable {
 
     constructor(
         address newOwner,
-        ISeloraV3Router _baseRouter,
-        ISeloraV3Factory _baseFactory,
+        IMagnetarV3Router _baseRouter,
+        IMagnetarV3Factory _baseFactory,
         uint64 _swapFeePercentage,
         IWETH _weth,
         address[] memory _trustedTokens
@@ -72,7 +72,7 @@ contract V3SwapExecutor is Ownable {
         // Approve spend
         _approveTokenSpend(IERC20(tokenA), amountIn);
         // Prepare routes
-        ISeloraV3Router.ExactInputSingleParams memory params = ISeloraV3Router.ExactInputSingleParams(
+        IMagnetarV3Router.ExactInputSingleParams memory params = IMagnetarV3Router.ExactInputSingleParams(
             tokenA,
             tokenB,
             tickSpacing,

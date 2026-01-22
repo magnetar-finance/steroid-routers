@@ -7,7 +7,7 @@
         "type": "address"
       },
       {
-        "internalType": "contract ISeloraV2Router",
+        "internalType": "contract IMagnetarV2Router",
         "name": "_baseRouter",
         "type": "address"
       },
@@ -152,7 +152,7 @@
     "name": "baseRouter",
     "outputs": [
       {
-        "internalType": "contract ISeloraV2Router",
+        "internalType": "contract IMagnetarV2Router",
         "name": "",
         "type": "address"
       }
@@ -246,7 +246,7 @@
             "type": "uint256"
           },
           {
-            "internalType": "contract ISeloraPool",
+            "internalType": "contract IMagnetarPool",
             "name": "pool",
             "type": "address"
           }
@@ -315,7 +315,7 @@
             "type": "uint256"
           },
           {
-            "internalType": "contract ISeloraPool",
+            "internalType": "contract IMagnetarPool",
             "name": "pool",
             "type": "address"
           }

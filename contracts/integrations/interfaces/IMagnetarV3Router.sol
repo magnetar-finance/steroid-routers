@@ -1,6 +1,6 @@
 pragma solidity ^0.8.0;
 
-interface ISeloraV3Router {
+interface IMagnetarV3Router {
     struct ExactInputSingleParams {
         address tokenIn;
         address tokenOut;

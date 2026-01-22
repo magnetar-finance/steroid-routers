@@ -1,6 +1,6 @@
 pragma solidity ^0.8.0;
 
-interface ISeloraV3Factory {
+interface IMagnetarV3Factory {
     function tickSpacings() external view returns (int24[] memory);
 
     /// @notice Returns the pool address for a given pair of tokens and a tick spacing, or address 0 if it does not exist

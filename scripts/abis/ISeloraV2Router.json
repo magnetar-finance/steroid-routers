@@ -42,7 +42,7 @@
             "type": "address"
           }
         ],
-        "internalType": "struct ISeloraV2Router.Route[]",
+        "internalType": "struct IMagnetarV2Router.Route[]",
         "name": "routes",
         "type": "tuple[]"
       }
@@ -195,7 +195,7 @@
             "type": "address"
           }
         ],
-        "internalType": "struct ISeloraV2Router.Route[]",
+        "internalType": "struct IMagnetarV2Router.Route[]",
         "name": "routes",
         "type": "tuple[]"
       },

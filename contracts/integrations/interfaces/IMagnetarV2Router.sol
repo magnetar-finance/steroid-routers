@@ -1,6 +1,6 @@
 pragma solidity ^0.8.0;
 
-interface ISeloraV2Router {
+interface IMagnetarV2Router {
     struct Route {
         address from;
         address to;

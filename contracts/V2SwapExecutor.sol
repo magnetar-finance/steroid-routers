@@ -3,9 +3,9 @@ pragma solidity ^0.8.0;
 import './interfaces/IWETH.sol';
 import '@openzeppelin/contracts/access/Ownable.sol';
 import '@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol';
-import './integrations/interfaces/ISeloraV2Router.sol';
-import './integrations/interfaces/ISeloraV2Factory.sol';
-import './integrations/interfaces/ISeloraPool.sol';
+import './integrations/interfaces/IMagnetarV2Router.sol';
+import './integrations/interfaces/IMagnetarV2Factory.sol';
+import './integrations/interfaces/IMagnetarPool.sol';
 
 contract V2SwapExecutor is Ownable {
     using SafeERC20 for IERC20;
@@ -20,11 +20,11 @@ contract V2SwapExecutor is Ownable {
         address tokenOut;
         uint256 amountIn;
         uint256 amountOut;
-        ISeloraPool pool;
+        IMagnetarPool pool;
     }
 
-    ISeloraV2Router public immutable baseRouter;
-    ISeloraV2Factory public immutable baseFactory;
+    IMagnetarV2Router public immutable baseRouter;
+    IMagnetarV2Factory public immutable baseFactory;
     uint64 public swapFeePercentage;
     IWETH public weth;
 
@@ -40,13 +40,13 @@ contract V2SwapExecutor is Ownable {
 
     constructor(
         address newOwner,
-        ISeloraV2Router _baseRouter,
+        IMagnetarV2Router _baseRouter,
         uint64 _swapFeePercentage,
         IWETH _weth,
         address[] memory _trustedTokens
     ) Ownable(newOwner) {
         baseRouter = _baseRouter;
-        baseFactory = ISeloraV2Factory(_baseRouter.defaultFactory());
+        baseFactory = IMagnetarV2Factory(_baseRouter.defaultFactory());
         setTrustedTokens(_trustedTokens);
 
         if (_swapFeePercentage > MAX_FEE_PERCENTAGE) revert FeePercentageTooHigh();
@@ -72,8 +72,8 @@ contract V2SwapExecutor is Ownable {
         // Approve spend
         _approveTokenSpend(IERC20(tokenA), amountIn);
         // Prepare routes
-        ISeloraV2Router.Route[] memory routes = new ISeloraV2Router.Route[](1);
-        routes[0] = ISeloraV2Router.Route({
+        IMagnetarV2Router.Route[] memory routes = new IMagnetarV2Router.Route[](1);
+        routes[0] = IMagnetarV2Router.Route({
             from: tokenA,
             to: tokenB,
             stable: stable,
@@ -104,14 +104,14 @@ contract V2SwapExecutor is Ownable {
             address pool = baseFactory.getPool(tokenA, tokenB, stable);
             uint256 aOut;
 
-            if (pool != address(0)) aOut = ISeloraPool(pool).getAmountOut(amountIn, tokenA);
+            if (pool != address(0)) aOut = IMagnetarPool(pool).getAmountOut(amountIn, tokenA);
 
             result = QueryResult({
                 tokenIn: tokenA,
                 tokenOut: tokenB,
                 amountIn: amountIn,
                 amountOut: aOut,
-                pool: ISeloraPool(pool)
+                pool: IMagnetarPool(pool)
             });
         }
     }

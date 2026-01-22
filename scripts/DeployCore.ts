@@ -2,9 +2,11 @@ import { network } from 'hardhat';
 import { createWriteStream, existsSync, readFileSync } from 'fs';
 import { writeFile } from 'fs/promises';
 import { join } from 'path';
-import { SeloraV2Router, SeloraV3Router, SwapExecutor } from '../types/ethers-contracts';
+import { SwapExecutor } from '../types/ethers-contracts';
 import Constants from './constants.json';
 import { deployContract, parseCLIArgs } from './helpers';
+import { MagnetarV2Router } from '../types/ethers-contracts/integrations/routers/MagnetarV2Router';
+import { MagnetarV3Router } from '../types/ethers-contracts/integrations/routers/MagnetarV3Router';
 
 // Output definition
 interface Output {
@@ -16,26 +18,27 @@ async function core() {
   // Get CLI args
   const cliArgs = parseCLIArgs();
   const networkName = cliArgs.values.network as string;
+  console.log(networkName);
   // Get constants
   const constants = Constants[networkName as keyof typeof Constants];
   const routers: string[] = [];
-  // Deploy SeloraV2
-  const seloraV2 = await deployContract<SeloraV2Router>(
+  // Deploy MagnetarV2
+  const magnetarV2 = await deployContract<MagnetarV2Router>(
     networkName,
-    'SeloraV2Router',
+    'MagnetarV2Router',
     undefined,
-    constants.seloraV2Router,
+    constants.magnetarV2Router,
   );
-  routers.push(await seloraV2.getAddress());
-  // Deploy SeloraV3
-  const seloraV3 = await deployContract<SeloraV3Router>(
+  routers.push(await magnetarV2.getAddress());
+  // Deploy MagnetarV3
+  const magnetarV3 = await deployContract<MagnetarV3Router>(
     networkName,
-    'SeloraV3Router',
+    'MagnetarV3Router',
     undefined,
-    constants.seloraV3Router,
-    constants.seloraV3Factory,
+    constants.magnetarV3Router,
+    constants.magnetarV3Factory,
   );
-  routers.push(await seloraV3.getAddress());
+  routers.push(await magnetarV3.getAddress());
 
   // Deploy swap executor
   const swapExecutor = await deployContract<SwapExecutor>(

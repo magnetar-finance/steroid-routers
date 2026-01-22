@@ -1,17 +1,17 @@
 pragma solidity ^0.8.0;
 
 import '../BaseRouter.sol';
-import '../interfaces/ISeloraV3Router.sol';
-import '../interfaces/ISeloraV3Factory.sol';
+import '../interfaces/IMagnetarV3Router.sol';
+import '../interfaces/IMagnetarV3Factory.sol';
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
 
-contract SeloraV3Router is BaseRouter {
+contract MagnetarV3Router is BaseRouter {
     using SafeERC20 for IERC20;
 
-    ISeloraV3Router public immutable baseSwapRouter;
-    ISeloraV3Factory public immutable baseFactory;
+    IMagnetarV3Router public immutable baseSwapRouter;
+    IMagnetarV3Factory public immutable baseFactory;
 
-    constructor(ISeloraV3Router _baseSwapRouter, ISeloraV3Factory _baseFactory) BaseRouter() {
+    constructor(IMagnetarV3Router _baseSwapRouter, IMagnetarV3Factory _baseFactory) BaseRouter() {
         baseSwapRouter = _baseSwapRouter;
         baseFactory = _baseFactory;
     }
@@ -69,7 +69,7 @@ contract SeloraV3Router is BaseRouter {
     ) internal virtual override {
         (int24 tickSpacing, ) = _getBestRoute(tokenA, tokenB, amountIn);
         // Params
-        ISeloraV3Router.ExactInputSingleParams memory params = ISeloraV3Router.ExactInputSingleParams(
+        IMagnetarV3Router.ExactInputSingleParams memory params = IMagnetarV3Router.ExactInputSingleParams(
             tokenA,
             tokenB,
             tickSpacing,
@@ -79,7 +79,7 @@ contract SeloraV3Router is BaseRouter {
             amountOut,
             0
         );
-        bytes memory callBytes = abi.encodeWithSelector(ISeloraV3Router.exactInputSingle.selector, params);
+        bytes memory callBytes = abi.encodeWithSelector(IMagnetarV3Router.exactInputSingle.selector, params);
         // Allow base router to spend amount
         IERC20(tokenA).approve(address(baseSwapRouter), amountIn);
         (bool success, ) = address(baseSwapRouter).call(callBytes);

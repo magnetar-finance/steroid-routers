@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-interface ISeloraV2Factory {
+interface IMagnetarV2Factory {
     /// @notice returns the number of pools created from this factory
     function allPoolsLength() external view returns (uint256);
 

@@ -2,12 +2,12 @@
   {
     "inputs": [
       {
-        "internalType": "contract ISeloraV3Router",
+        "internalType": "contract IMagnetarV3Router",
         "name": "_baseSwapRouter",
         "type": "address"
       },
       {
-        "internalType": "contract ISeloraV3Factory",
+        "internalType": "contract IMagnetarV3Factory",
         "name": "_baseFactory",
         "type": "address"
       }
@@ -108,7 +108,7 @@
     "name": "baseFactory",
     "outputs": [
       {
-        "internalType": "contract ISeloraV3Factory",
+        "internalType": "contract IMagnetarV3Factory",
         "name": "",
         "type": "address"
       }
@@ -121,7 +121,7 @@
     "name": "baseSwapRouter",
     "outputs": [
       {
-        "internalType": "contract ISeloraV3Router",
+        "internalType": "contract IMagnetarV3Router",
         "name": "",
         "type": "address"
       }
