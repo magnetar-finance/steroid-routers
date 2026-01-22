@@ -67,6 +67,15 @@ const config: HardhatUserConfig = {
       type: 'http',
       chainType: 'l1',
     },
+    pharosTestnet: {
+      url: configVariable('PHAROS_TESTNET_RPC_URL'),
+      chainId: 688689,
+      accounts: [configVariable('PRIVATE_KEY')],
+      gasPrice: 'auto',
+      gas: 'auto',
+      type: 'http',
+      chainType: 'l1',
+    },
   },
   abiExporter: {
     path: './scripts/deployments/abis',

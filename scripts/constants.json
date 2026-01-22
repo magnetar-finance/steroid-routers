@@ -42,5 +42,19 @@
       "0x5695487B33A02B7f811D001D64a1581c474f6c14",
       "0x66aCa281eB98ef05bc31e66CC353A9D7d11Ae2E7"
     ]
+  },
+  "pharosTestnet": {
+    "team": "0xb69DB7b7B3aD64d53126DCD1f4D5fBDaea4fF578",
+    "magnetarV2Router": "0x023AF3A2F01982A07c80BDe582E48b4B9b491034",
+    "magnetarV3Router": "0x79cC64e40CF1b79E54d80fAB5De924efdC1e90d9",
+    "magnetarV3Factory": "0xD75411C6A3fEf2278E51EEaa73cdE8352c59eFEd",
+    "weth": "0x5695487B33A02B7f811D001D64a1581c474f6c14",
+    "trustedTokens": [
+      "0xe7e84b8b4f39c507499c40b4ac199b050e2882d5",
+      "0xe0be08c77f415f577a1b3a9ad7a1df1479564ec8",
+      "0x838800b758277cc111b2d48ab01e5e164f8e9471",
+      "0xb691f00682feef63bc73f41c380ff648d73c6a2c",
+      "0x7d211f77525ea39a0592794f793cc1036eeaccd5"
+    ]
   }
 }
