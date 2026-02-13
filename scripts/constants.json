@@ -56,5 +56,13 @@
       "0xb691f00682feef63bc73f41c380ff648d73c6a2c",
       "0x7d211f77525ea39a0592794f793cc1036eeaccd5"
     ]
+  },
+  "seismicTestnet": {
+    "team": "0xb69DB7b7B3aD64d53126DCD1f4D5fBDaea4fF578",
+    "magnetarV2Router": "0x106f65e8ac8Fb84024e583AE1abAf7552E7EE80d",
+    "magnetarV3Router": "0xb62E0994c1F91120389935fb01bfd58312594350",
+    "magnetarV3Factory": "0xB15716c7404BceFaDbd211b04F10bCbD9F93f6Dc",
+    "weth": "0x64FAF984Bf60dE19e24238521814cA98574E3b00",
+    "trustedTokens": ["0xf886ABaCe837E5EC0CF7037B4d2198F7a1bf35B5", "0x2e19F01B81628CCd8cFce9F7d9F2fACC77343b7c"]
   }
 }

@@ -76,6 +76,15 @@ const config: HardhatUserConfig = {
       type: 'http',
       chainType: 'l1',
     },
+    seismicTestnet: {
+      url: configVariable('SEISMIC_TESTNET_RPC_URL'),
+      chainId: 5124,
+      accounts: [configVariable('PRIVATE_KEY')],
+      gasPrice: 'auto',
+      gas: 'auto',
+      type: 'http',
+      chainType: 'l1',
+    },
   },
   abiExporter: {
     path: './scripts/deployments/abis',
