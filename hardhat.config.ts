@@ -85,6 +85,15 @@ const config: HardhatUserConfig = {
       type: 'http',
       chainType: 'l1',
     },
+    arcTestnet: {
+      url: configVariable('ARC_TESTNET_RPC_URL'),
+      chainId: 5042002,
+      accounts: [configVariable('PRIVATE_KEY')],
+      gasPrice: 'auto',
+      gas: 'auto',
+      type: 'http',
+      chainType: 'l1',
+    },
   },
   abiExporter: {
     path: './scripts/deployments/abis',
