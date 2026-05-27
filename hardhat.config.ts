@@ -94,6 +94,15 @@ const config: HardhatUserConfig = {
       type: 'http',
       chainType: 'l1',
     },
+    litVMTestnet: {
+      url: configVariable('LIT_VM_TESTNET_RPC_URL'),
+      chainId: 4441,
+      accounts: [configVariable('PRIVATE_KEY')],
+      gasPrice: 'auto',
+      gas: 'auto',
+      type: 'http',
+      chainType: 'l1',
+    },
   },
   abiExporter: {
     path: './scripts/deployments/abis',
