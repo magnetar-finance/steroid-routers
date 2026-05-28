@@ -10,10 +10,6 @@ interface Output {
   swapExecutor: string;
 }
 
-const trustedTokens = {
-  arcTestnet: ['0xf0C4a4CE82A5746AbAAd9425360Ab04fbBA432BF', '0x64FAF984Bf60dE19e24238521814cA98574E3b00'],
-};
-
 async function core() {
   const cliArgs = parseCLIArgs();
   const networkName = cliArgs.values.network as string;
@@ -27,8 +23,8 @@ async function core() {
   const output: Output = JSON.parse(buffer.toString());
 
   const router = await getContractAtAddress<SwapExecutor>('arcTestnet', 'SwapExecutor', output.swapExecutor);
-  const tt = constants[networkName as keyof typeof constants].trustedTokens;
-  await router.setTrustedTokens(tt.concat(trustedTokens[networkName as keyof typeof trustedTokens]));
+  const trustedTokens = constants[networkName as keyof typeof constants].trustedTokens;
+  await router.setTrustedTokens(trustedTokens);
 }
 
 core().catch(error => {

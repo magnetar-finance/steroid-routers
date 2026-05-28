@@ -29,6 +29,8 @@
     "deploy:units": "bun hardhat run scripts/DeployUnits.ts",
     "deploy:integrations": "bun hardhat run scripts/DeployMainIntegrations.ts",
     "extract-abis": "npx hardhat run scripts/ExtractABIs.ts",
-    "set-trusted-tokens": "npx hardhat run scripts/SetTrustedTokens.ts"
+    "set-trusted-tokens": "npx hardhat run scripts/SetTrustedTokens.ts",
+    "deploy-wolfdex-litvm-testnet": "bun hardhat run scripts/Deploy-Wolf-LitVMTestnet.ts --network litVMTestnet",
+    "deploy-liteswap-litvm-testnet": "bun hardhat run scripts/Deploy-Liteswap-LitVMTestnet.ts --network litVMTestnet"
   }
 }
