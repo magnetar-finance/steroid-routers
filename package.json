@@ -1,7 +1,6 @@
 {
   "name": "magnetar-steroid-routers",
   "version": "1.0.0",
-  "type": "module",
   "devDependencies": {
     "@nomicfoundation/hardhat-ignition": "^3.0.3",
     "@nomicfoundation/hardhat-keystore": "^3.0.1",
@@ -14,6 +13,7 @@
     "@types/chai-as-promised": "^8.0.2",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.18.6",
+    "@uniswap/v3-core": "^1.0.1",
     "chai": "^5.3.3",
     "ethers": "^6.15.0",
     "forge-std": "github:foundry-rs/forge-std#v1.9.4",
@@ -31,6 +31,8 @@
     "extract-abis": "npx hardhat run scripts/ExtractABIs.ts",
     "set-trusted-tokens": "npx hardhat run scripts/SetTrustedTokens.ts",
     "deploy-wolfdex-litvm-testnet": "bun hardhat run scripts/Deploy-Wolf-LitVMTestnet.ts --network litVMTestnet",
-    "deploy-liteswap-litvm-testnet": "bun hardhat run scripts/Deploy-Liteswap-LitVMTestnet.ts --network litVMTestnet"
-  }
+    "deploy-liteswap-litvm-testnet": "bun hardhat run scripts/Deploy-Liteswap-LitVMTestnet.ts --network litVMTestnet",
+    "deploy-multyra-litvm-testnet": "bun hardhat run scripts/Deploy-Multyra-LitVMTestnet.ts --network litVMTestnet"
+  },
+  "type": "module"
 }
