@@ -32,7 +32,12 @@
     "set-trusted-tokens": "npx hardhat run scripts/SetTrustedTokens.ts",
     "deploy-wolfdex-litvm-testnet": "bun hardhat run scripts/Deploy-Wolf-LitVMTestnet.ts --network litVMTestnet",
     "deploy-liteswap-litvm-testnet": "bun hardhat run scripts/Deploy-Liteswap-LitVMTestnet.ts --network litVMTestnet",
-    "deploy-multyra-litvm-testnet": "bun hardhat run scripts/Deploy-Multyra-LitVMTestnet.ts --network litVMTestnet"
+    "deploy-multyra-litvm-testnet": "bun hardhat run scripts/Deploy-Multyra-LitVMTestnet.ts --network litVMTestnet",
+    "deploy-unitflow-arc-testnet": "bun hardhat run scripts/Deploy-UnitFlow-ArcTestnet.ts --network arcTestnet",
+    "deploy-synthrav3-arc-testnet": "bun hardhat run scripts/Deploy-SynthraV3-ArcTestnet.ts --network arcTestnet"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@synthra-swap/v3-core": "^1.0.6"
+  }
 }
