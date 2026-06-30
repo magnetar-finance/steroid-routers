@@ -22,7 +22,7 @@ async function core() {
   const buffer = readFileSync(outputFile);
   const output: Output = JSON.parse(buffer.toString());
 
-  const router = await getContractAtAddress<SwapExecutor>('arcTestnet', 'SwapExecutor', output.swapExecutor);
+  const router = await getContractAtAddress<SwapExecutor>(networkName, 'SwapExecutor', output.swapExecutor);
   const trustedTokens = constants[networkName as keyof typeof constants].trustedTokens;
   await router.setTrustedTokens(trustedTokens);
 }
