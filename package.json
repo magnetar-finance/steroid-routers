@@ -36,7 +36,8 @@
     "deploy-unitflow-arc-testnet": "bun hardhat run scripts/Deploy-UnitFlow-ArcTestnet.ts --network arcTestnet",
     "deploy-synthrav3-arc-testnet": "bun hardhat run scripts/Deploy-SynthraV3-ArcTestnet.ts --network arcTestnet",
     "deploy-lestar-litvm-testnet": "bun hardhat run scripts/Deploy-Lestar-LitVMTestnet.ts --network litVMTestnet",
-    "deploy-drunken-cats-litvm-testnet": "bun hardhat run scripts/Deploy-DrunkenCats-LitVMTestnet.ts --network litVMTestnet"
+    "deploy-drunken-cats-litvm-testnet": "bun hardhat run scripts/Deploy-DrunkenCats-LitVMTestnet.ts --network litVMTestnet",
+    "deploy-zerodex-litvm-testnet": "bun hardhat run scripts/Deploy-ZeroDex-LitVMTestnet.ts --network litVMTestnet"
   },
   "type": "module",
   "dependencies": {
