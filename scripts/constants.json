@@ -118,5 +118,30 @@
       "0xEa71393074fFCB6d132B8a2b6028CAF952af03A5",
       "0x6ffB02fa705A0DB3c8EbB31A63EdFE62c103363D"
     ]
+  },
+  "neuraTestnet": {
+    "team": "0xb69DB7b7B3aD64d53126DCD1f4D5fBDaea4fF578",
+    "magnetarV2Router": "0x7961c29F9007ADbE089c1C4163a77e453A960583",
+    "magnetarV3Router": "0xC05b371680057B55e23C27d23453592cdf972Ec1",
+    "magnetarV3Factory": "0xf6a6a429a0b9676293Df0E3616A6a33cA673b5C3",
+    "weth": "0x422f5eae5fee0227fb31f149e690a73c4ad02db8",
+    "trustedTokens": [
+      "0x3a631ee99ef7fe2d248116982b14e7615ac77502",
+      "0x058b68cbddc841214448dfa60427909cfb78cf5d",
+      "0x3655ccbd4e10c74e5bb48b016fd88fa468f49324",
+      "0x8e1127edb1cdcb450412295f60756aef3eefd5c7",
+      "0x422f5eae5fee0227fb31f149e690a73c4ad02db8",
+      "0x9423c6c914857e6daaace3b585f4640231505128",
+      "0x5ac7435dc9ca69c85bfc09187d2d9bdc5cdef711",
+      "0x5f963be0c8280599b3c716c2ab1764a7ed3d6822",
+      "0x6a283f60975099f2b361607faf8cf7a683e3f4e6",
+      "0x8e1127edb1cdcb450412295f60756aef3eefd5c7",
+      "0xb0e16293e5e2cf19803716b9fd59609eccf9e59b",
+      "0xe6ad32746b35a8748d42ffb683332ae33e3ae509",
+      "0x193fa458f8e95fb8a7319f8285533d6a62cd22c9",
+      "0x1ab357522ed5c1a76f361520dec1b02a3ed04014",
+      "0x2444fae99f9aa127043032be8589fac4b601c733",
+      "0x3630388bd5e6927b7b6f8b6eb5863315d9401401"
+    ]
   }
 }

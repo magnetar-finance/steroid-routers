@@ -103,6 +103,15 @@ const config: HardhatUserConfig = {
       type: 'http',
       chainType: 'l1',
     },
+    neuraTestnet: {
+      url: configVariable('NEURA_TESTNET_RPC_URL'),
+      chainId: 267,
+      accounts: [configVariable('PRIVATE_KEY')],
+      gasPrice: 'auto',
+      gas: 'auto',
+      type: 'http',
+      chainType: 'l1',
+    },
   },
   abiExporter: {
     path: './scripts/deployments/abis',
