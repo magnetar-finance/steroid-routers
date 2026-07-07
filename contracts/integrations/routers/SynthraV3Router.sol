@@ -78,7 +78,6 @@ contract SynthraV3Router is BaseRouter {
             tokenB,
             tickSpacing,
             to,
-            deadline,
             amountIn,
             amountOut,
             0
@@ -88,5 +87,6 @@ contract SynthraV3Router is BaseRouter {
         IERC20(tokenA).approve(address(swapRouter), amountIn);
         (bool success, ) = address(swapRouter).call(callBytes);
         require(success, 'Swap failed');
+        require(block.timestamp < deadline, 'Deadline exceeded');
     }
 }

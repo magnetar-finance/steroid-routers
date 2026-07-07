@@ -30,6 +30,7 @@
     "deploy:integrations": "bun hardhat run scripts/DeployMainIntegrations.ts",
     "extract-abis": "npx hardhat run scripts/ExtractABIs.ts",
     "set-trusted-tokens": "npx hardhat run scripts/SetTrustedTokens.ts",
+    "switch-router-active-status": "npx hardhat run scripts/Switch-Router-Active-Status.ts",
     "deploy-wolfdex-litvm-testnet": "bun hardhat run scripts/Deploy-Wolf-LitVMTestnet.ts --network litVMTestnet",
     "deploy-liteswap-litvm-testnet": "bun hardhat run scripts/Deploy-Liteswap-LitVMTestnet.ts --network litVMTestnet",
     "deploy-multyra-litvm-testnet": "bun hardhat run scripts/Deploy-Multyra-LitVMTestnet.ts --network litVMTestnet",
