@@ -1,0 +1,186 @@
+[
+  {
+    "type": "function",
+    "name": "getPairId",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [
+      {
+        "type": "address",
+        "name": "tokenA"
+      },
+      {
+        "type": "address",
+        "name": "tokenB"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "bytes32"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getPoolPriceInfo",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "pairId"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "price"
+      },
+      {
+        "type": "uint256",
+        "name": "reserve0"
+      },
+      {
+        "type": "uint256",
+        "name": "reserve1"
+      },
+      {
+        "type": "uint256",
+        "name": "totalLP"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getPrice",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [
+      {
+        "type": "address",
+        "name": "tokenIn"
+      },
+      {
+        "type": "address",
+        "name": "tokenOut"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "price"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "poolExists",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "pairId"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "bool"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "pools",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "pairId"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "address",
+        "name": "token0"
+      },
+      {
+        "type": "address",
+        "name": "token1"
+      },
+      {
+        "type": "uint256",
+        "name": "reserve0"
+      },
+      {
+        "type": "uint256",
+        "name": "reserve1"
+      },
+      {
+        "type": "uint256",
+        "name": "totalLP"
+      },
+      {
+        "type": "uint256",
+        "name": "volume24h"
+      },
+      {
+        "type": "uint256",
+        "name": "totalVolume"
+      },
+      {
+        "type": "uint256",
+        "name": "lastVolumeReset"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "swap",
+    "constant": false,
+    "stateMutability": "payable",
+    "payable": true,
+    "inputs": [
+      {
+        "type": "address",
+        "name": "tokenIn"
+      },
+      {
+        "type": "address",
+        "name": "tokenOut"
+      },
+      {
+        "type": "uint256",
+        "name": "amountIn"
+      },
+      {
+        "type": "uint256",
+        "name": "minAmountOut"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "swapFee",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "uint256"
+      }
+    ]
+  }
+]

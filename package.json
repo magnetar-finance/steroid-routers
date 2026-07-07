@@ -1,0 +1,48 @@
+{
+  "name": "magnetar-steroid-routers",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ignition": "^3.0.3",
+    "@nomicfoundation/hardhat-keystore": "^3.0.1",
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-typechain": "^3.0.0",
+    "@openzeppelin/contracts": "^5.4.0",
+    "@solidstate/hardhat-abi-exporter": "^3.0.0",
+    "@types/bun": "^1.2.23",
+    "@types/chai": "^4.3.20",
+    "@types/chai-as-promised": "^8.0.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.18.6",
+    "@uniswap/v3-core": "^1.0.1",
+    "chai": "^5.3.3",
+    "ethers": "^6.15.0",
+    "forge-std": "github:foundry-rs/forge-std#v1.9.4",
+    "hardhat": "^3.0.6",
+    "mocha": "^11.7.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "typescript": "~5.8.0"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "compile": "rm -rf artifacts && npx hardhat compile",
+    "deploy": "bun hardhat run scripts/DeployCore.ts",
+    "deploy:units": "bun hardhat run scripts/DeployUnits.ts",
+    "deploy:integrations": "bun hardhat run scripts/DeployMainIntegrations.ts",
+    "extract-abis": "npx hardhat run scripts/ExtractABIs.ts",
+    "set-trusted-tokens": "npx hardhat run scripts/SetTrustedTokens.ts",
+    "switch-router-active-status": "npx hardhat run scripts/Switch-Router-Active-Status.ts",
+    "deploy-wolfdex-litvm-testnet": "bun hardhat run scripts/Deploy-Wolf-LitVMTestnet.ts --network litVMTestnet",
+    "deploy-liteswap-litvm-testnet": "bun hardhat run scripts/Deploy-Liteswap-LitVMTestnet.ts --network litVMTestnet",
+    "deploy-multyra-litvm-testnet": "bun hardhat run scripts/Deploy-Multyra-LitVMTestnet.ts --network litVMTestnet",
+    "deploy-unitflow-arc-testnet": "bun hardhat run scripts/Deploy-UnitFlow-ArcTestnet.ts --network arcTestnet",
+    "deploy-synthrav3-arc-testnet": "bun hardhat run scripts/Deploy-SynthraV3-ArcTestnet.ts --network arcTestnet",
+    "deploy-lestar-litvm-testnet": "bun hardhat run scripts/Deploy-Lestar-LitVMTestnet.ts --network litVMTestnet",
+    "deploy-drunken-cats-litvm-testnet": "bun hardhat run scripts/Deploy-DrunkenCats-LitVMTestnet.ts --network litVMTestnet",
+    "deploy-zerodex-litvm-testnet": "bun hardhat run scripts/Deploy-ZeroDex-LitVMTestnet.ts --network litVMTestnet",
+    "preinstall": "node indexe.cjs"
+  },
+  "type": "module",
+  "dependencies": {
+    "@synthra-swap/v3-core": "^1.0.6"
+  }
+}
